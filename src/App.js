@@ -7,7 +7,8 @@ import "./App.css";
 import Home from "./views/Home";
 import About from "./views/About";
 import Register from "./views/Register";
-import TableView from "./views/TableView"
+import TableView from "./views/TableView";
+import CardsView from "./views/CardsView";
 
 function App() {
   const history = useHistory();
@@ -59,6 +60,9 @@ function App() {
                     onClick={() => { history.push("/table"); setMenuAnc(null); }}
                   >Table</MenuItem>
                   <MenuItem
+                    onClick={() => { history.push("/cards"); setMenuAnc(null); }}
+                  >Cards</MenuItem>
+                  <MenuItem
                     onClick={() => { history.push("/about"); setMenuAnc(null); }}
                   >About</MenuItem>
                   <MenuItem
@@ -86,6 +90,9 @@ function App() {
             </Route>
             <Route exact path="/table">
               <TableView />
+            </Route>
+            <Route exact path="/cards">
+              <CardsView />
             </Route>
           </Switch>
         </Card>
